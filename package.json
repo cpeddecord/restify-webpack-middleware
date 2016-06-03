@@ -7,10 +7,6 @@
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"
   },
-  "peerDependencies": {
-    "restify": "^4.1.0",
-    "webpack": ">=1.13.1"
-  },
   "scripts": {
     "test": "echo \"where we're going, we don't need tests\" && exit 1"
   },
