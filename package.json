@@ -1,0 +1,19 @@
+{
+  "name": "restify-webpack-middleware",
+  "version": "0.0.1",
+  "description": "Webpack Dev/Hot Middleware wrapper for use with Restify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Peddecord <cpeddecord@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
+  },
+  "peerDependencies": {
+    "webpack": "^2.1.0-beta.6"
+  }
+}
