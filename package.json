@@ -19,9 +19,9 @@
     "url": "git+https://github.com/cpeddecord/restify-webpack-middleware.git"
   },
   "author": "Chris Peddecord <cpeddecord@gmail.com>",
-  "contributors": [{
+  "contributors": [
     "JQ <jquatier@gmail.com>"
-  }],
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cpeddecord/restify-webpack-middleware/issues"
@@ -40,5 +40,5 @@
     "hot-reloading",
     "middleware",
     "restify"
-  ],
+  ]
 }
