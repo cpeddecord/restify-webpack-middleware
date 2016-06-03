@@ -33,10 +33,10 @@ const hotMiddlewareConfig = {
 
 const { webpackDevMiddleware, webpackHotMiddleware } = configureWebpackMiddleware(
   compiler,
-  webpackDevConfig,
-  webpackHotConfig
+  devMiddlewareConfig,
+  hotMiddlewareConfig
 );
 
 server.use(webpackDevMiddleware);
-server.get(webpackHotConfig.path, webpackHotMiddleware);
+server.get(hotMiddlewareConfig.path, webpackHotMiddleware);
 ```
