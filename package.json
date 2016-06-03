@@ -1,6 +1,6 @@
 {
   "name": "restify-webpack-middleware",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Webpack Dev/Hot Middleware wrapper for use with Restify",
   "main": "index.js",
   "dependencies": {
@@ -27,8 +27,8 @@
     "url": "https://github.com/cpeddecord/restify-webpack-middleware/issues"
   },
   "homepage": "https://github.com/cpeddecord/restify-webpack-middleware#readme",
-  "engines" : {
-    "node" : ">=4.2.0"
+  "engines": {
+    "node": ">=4.2.0"
   },
   "keywords": [
     "webpack",
