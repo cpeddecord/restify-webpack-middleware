@@ -19,6 +19,9 @@
     "url": "git+https://github.com/cpeddecord/restify-webpack-middleware.git"
   },
   "author": "Chris Peddecord <cpeddecord@gmail.com>",
+  "contributors": [{
+    "JQ <jquatier@gmail.com>"
+  }],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cpeddecord/restify-webpack-middleware/issues"
@@ -26,5 +29,16 @@
   "homepage": "https://github.com/cpeddecord/restify-webpack-middleware#readme",
   "engines" : {
     "node" : ">=4.2.0"
-  }
+  },
+  "keywords": [
+    "webpack",
+    "hmr",
+    "hot",
+    "dev",
+    "module",
+    "reloading",
+    "hot-reloading",
+    "middleware",
+    "restify"
+  ],
 }

@@ -8,7 +8,7 @@ module.exports = function registerWebpackMiddlewareForRestify(compiler, devConfi
   function webpackDevMiddlewareForRestify(req, res, next) {
     // stub restify methods as used within `webpack-dev-middleware`
     const restifyTransport = {
-      setHeader(arguments) {
+      setHeader() {
         res.setHeader(arguments);
       },
       send(content) {
