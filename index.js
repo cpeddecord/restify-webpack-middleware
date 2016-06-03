@@ -1,7 +1,7 @@
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
-export default function registerWebpackMiddlewareForRestify(compiler, devConfig, hotConfig) {
+module.exports = function registerWebpackMiddlewareForRestify(compiler, devConfig, hotConfig) {
   const devMiddlewareInstance = webpackDevMiddleware(compiler, devConfig);
   const hotMiddlewareInstance = webpackHotMiddleware(compiler, hotConfig);
 
