@@ -21,12 +21,12 @@ const server = restify.createServer({ ... });
 
 const compiler = webpack(webpackConfig);
 
-const devMiddlewareConfig = {
+const webpackDevConfig = {
   webpackConfig,
   publicPath: webpackConfig.output.publicPath,
 };
 
-const hotMiddlewareConfig = {
+const webpackHotConfig = {
   log: console.log,
   path: '/__webpack_hmr',
 };
@@ -35,8 +35,8 @@ registerWebpackMiddleware(
   restifyApp,
   {
     compiler,
-    devMiddlewareConfig,
-    hotMiddlewareConfig,
+    webpackDevConfig,
+    webpackHotConfig,
   }
 );
 ```
