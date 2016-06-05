@@ -5,15 +5,15 @@ Just a thin wrapper around [Webpack Dev Middleware](https://github.com/webpack/w
 ### `configureWebpackMiddleware()`
 
 ```
-configureWebpackMiddleware(compiler, devConfig, hotConfig);
+configureWebpackMiddleware(restifyInstance, { compiler, webpackDevConfig, webpackHotConfig });
 ```
 
-Pass your compiled Webpack config along with standard configuration objects from both Dev and Hot Middlewares and you'll receive two middlwares back, `webpackDevMiddleware` and `webpackHotMiddleware`. `webpackDevMiddleware` can be used with a standard middleware signature where `webpackHotMiddleware` needs to be used in conjunction with a `server.get('path/to/hmr', webpackHotMiddleware)` signature.
+Pass the instance of your Restify server along with the compiled Webpack config and the standard configuration objects from both Dev and Hot Middlewares and presto/chango/whamo you'll have some hot-dev middleware action.
 
 ```
 import restify from 'restify';
 import webpack from 'webpack';
-import configureWebpackMiddleware from 'restify-webpack-middleware';
+import registerWebpackMiddleware from 'restify-webpack-middleware';
 
 import webpackConfig from './path/to/your/webpack.config';
 
@@ -31,12 +31,12 @@ const hotMiddlewareConfig = {
   path: '/__webpack_hmr',
 };
 
-const { webpackDevMiddleware, webpackHotMiddleware } = configureWebpackMiddleware(
-  compiler,
-  devMiddlewareConfig,
-  hotMiddlewareConfig
+registerWebpackMiddleware(
+  restifyApp,
+  {
+    compiler,
+    devMiddlewareConfig,
+    hotMiddlewareConfig,
+  }
 );
-
-server.use(webpackDevMiddleware);
-server.get(hotMiddlewareConfig.path, webpackHotMiddleware);
 ```
