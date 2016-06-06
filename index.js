@@ -29,5 +29,5 @@ module.exports = function registerWebpackMiddlewareForRestify(restifyApp, config
   }
 
   restifyApp.use(webpackDevMiddlewareForRestify);
-  restifyApp.get(config.hotConfig.path, hotMiddlewareInstance);
+  restifyApp.get(config.webpackHotConfig.path, hotMiddlewareInstance);
 }
