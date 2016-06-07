@@ -5,7 +5,7 @@ Just a thin wrapper around [Webpack Dev Middleware](https://github.com/webpack/w
 ### `configureWebpackMiddleware()`
 
 ```
-configureWebpackMiddleware(restifyInstance, { compiler, webpackDevConfig, webpackHotConfig });
+registerWebpackMiddleware(restifyInstance, { compiler, webpackDevConfig, webpackHotConfig });
 ```
 
 Pass the instance of your Restify server along with the compiled Webpack config and the standard configuration objects from both Dev and Hot Middlewares and presto/chango/whamo you'll have some hot-dev middleware action.
