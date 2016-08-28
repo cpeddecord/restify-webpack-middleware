@@ -15,7 +15,6 @@ module.exports = function registerWebpackMiddlewareForRestify(restifyApp, config
         res.charSet('utf-8');
         res.writeHead(this.statusCode || 200, {
           'Content-Length': Buffer.byteLength(content),
-          'Content-Type': 'application/json',
         });
         res.write(content);
         res.end();
