@@ -1,6 +1,6 @@
 {
   "name": "restify-webpack-middleware",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Webpack Dev/Hot Middleware wrapper for use with Restify",
   "main": "index.js",
   "dependencies": {
