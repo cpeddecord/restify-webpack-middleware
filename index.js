@@ -1,9 +1,9 @@
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
-module.exports = function registerWebpackMiddlewareForRestify(compiler, devConfig, hotConfig) {
-  const devMiddlewareInstance = webpackDevMiddleware(compiler, devConfig);
-  const hotMiddlewareInstance = webpackHotMiddleware(compiler, hotConfig);
+module.exports = function registerWebpackMiddlewareForRestify(restifyApp, config) {
+  const devMiddlewareInstance = webpackDevMiddleware(config.compiler, config.webpackDevConfig);
+  const hotMiddlewareInstance = webpackHotMiddleware(config.compiler, config.webpackHotConfig);
 
   function webpackDevMiddlewareForRestify(req, res, next) {
     // stub restify methods as used within `webpack-dev-middleware`
@@ -15,7 +15,6 @@ module.exports = function registerWebpackMiddlewareForRestify(compiler, devConfi
         res.charSet('utf-8');
         res.writeHead(this.statusCode || 200, {
           'Content-Length': Buffer.byteLength(content),
-          'Content-Type': 'application/json',
         });
         res.write(content);
         res.end();
@@ -28,12 +27,6 @@ module.exports = function registerWebpackMiddlewareForRestify(compiler, devConfi
     devMiddlewareInstance(req, restifyTransport, next);
   }
 
-  function webpackHotMiddlewareForRestify(req, res, next) {
-    hotMiddlewareInstance(req, res, next);
-  }
-
-  return {
-    webpackDevMiddleware: webpackDevMiddlewareForRestify,
-    webpackHotMiddleware: webpackHotMiddlewareForRestify,
-  };
+  restifyApp.use(webpackDevMiddlewareForRestify);
+  restifyApp.get(config.webpackHotConfig.path, hotMiddlewareInstance);
 }
